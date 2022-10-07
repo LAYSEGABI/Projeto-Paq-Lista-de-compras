@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Compras</title>
+    <link rel="icon" type="image/png" href="download-removebg-preview (1).png">
     <link rel="stylesheet" href="pf.css">
 </head>
 
@@ -42,9 +43,9 @@
         let produto = document.querySelector('#produto')
         function addProduto() {    
             if (produto.value.length == 0) {
-                window.alert('Adicione valores antes de finalizar!')
+                window.alert('Adicione algo antes de finalizar!')
             } else {
-            let item = `<span > <br> <input type="checkbox" id="${produto.value}" onclick="check(${produto.value})">${produto.value}</input>  <button id="${produto.value}-" onclick="clicar(${produto.value})"> x </button></span>`;
+            let item = `<span > <br> <input type="checkbox" id="${produto.value}" onclick="check(${produto.value})">  ${produto.value}  </input>  <button id="${produto.value}-" onclick="clicar(${produto.value})">  x  </button></span>`;
             res.innerHTML += item;
             produto.value = ''}
         }
@@ -54,7 +55,7 @@
                 let digite = Number.parseFloat(window.prompt('digite o valor do item'))
                 valor += digite
                 console.log(valor)
-                total.innerText = `${valor}`
+                total.innerText = `R$ ${valor}`
             }
         }
         function clicar(ver) {
